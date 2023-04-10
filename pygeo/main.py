@@ -43,12 +43,12 @@ class pygeo:
     def __str__(self):
         return "Mosaic rasterfile"
 
-    @error_handler   
+    @error_handler()   
     def create_dirs(self):
         if not path.isdir(self.args.output_dir):
             makedirs(self.args.output_dir)
 
-    @error_handler
+    @error_handler()
     def main(self):
         """Main method"""
         path = self.args.input_dir
@@ -73,7 +73,7 @@ def main():
     parser = argparse.ArgumentParser(
         description="Mosaic rasterfile"
         )
-    parser.add_argument("-v","--version",action=f"v{__version__}")
+    parser.add_argument("-v","--version",action="version",version=f"v{__version__}")
     parser.add_argument("--input-dir",help="Path to directory containing raster files",
     required=True)
     parser.add_argument("--output",dest="output_dir",help="Path to save the output",required=True)
