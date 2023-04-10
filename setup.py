@@ -3,6 +3,7 @@ from pygeo import __maintainer__,__email__,__repo__
 
 setup(
     name="pygeogis",
+    packages=["pygeo"],
     maintainer=__maintainer__,
     maintainer_email=__email__,
     url=__repo__,
